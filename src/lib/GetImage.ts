@@ -1,7 +1,7 @@
 export const constructImageUrl = (assetId: string) => {
   // Sanity project details (replace with your actual details)
-  const projectId = "j9d7duit"; // Your project ID
-  const dataset = "production"; // Your dataset name
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID; // Your project ID
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET; // Your dataset name
 
   // Extract relevant parts from the asset ID
   const parts = assetId.split("-");

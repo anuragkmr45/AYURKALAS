@@ -6,9 +6,9 @@ export const getSession = async () => {
   return session;
 };
 
-export const validateSession = async () => {
+export const validateSession = async (redirectLink?: string) => {
   const session = await getSession();
   if (!session) {
-    redirect("/");
+    redirect(redirectLink || "/");
   }
 };

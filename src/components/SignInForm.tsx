@@ -7,17 +7,19 @@ import Label from "./Label";
 import { LuAsterisk } from "react-icons/lu";
 
 export const SignInForm = () => {
+  
   const handleSignIn = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     toast.success("sign in on going");
   };
+
   return (
     <div>
       <h2 className="text-xl font-bold">Credential sign in</h2>
       <form onSubmit={handleSignIn} className="py-3 flex flex-col gap-3">
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">
-            Username or email address{" "}
+            Email address{" "}
             <LuAsterisk className="text-lightRed text-xs" />
           </Label>
           <Input type="email" placeholder="john@youremail.com" required />

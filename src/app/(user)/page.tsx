@@ -4,7 +4,8 @@ import Banner from "@/components/Banner";
 import Facilities from "@/components/Facilities";
 import ProductList from "@/components/ProductList";
 
-const Home = async () => {
+const Home = () => {
+
   return (
     <Container className="py-10">
       <Banner />

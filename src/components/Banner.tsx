@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, {useState, useEffect} from "react";
 import { BannerData } from "../../types";
 import { getBannersData } from "@/lib/getData";
 import Image from "next/image";
@@ -7,9 +9,15 @@ import Button from "./Button";
 import Link from "next/link";
 import FormattedPrice from "./FormattedPrice";
 
-const Banner = async () => {
-  const banners: BannerData[] = await getBannersData();
+const Banner =  () => {
+
+  const [banners, setBanners] = useState<BannerData[]>([]);
+  useEffect(() => {
+    getBannersData().then((data) => setBanners(data));
+  }, []);
+
   const singleBanner = banners[0];
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 md:max-h-[600px]">
       {/* Left half - single image */}

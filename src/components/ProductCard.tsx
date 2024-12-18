@@ -6,18 +6,22 @@ import { urlFor } from "@/sanity/lib/image";
 import { MdStar } from "react-icons/md";
 import FormattedPrice from "./FormattedPrice";
 import AddToCartButton from "./AddToCartButton";
+import Img from "@/assets/googleImage.png";
 
 const ProductCard = ({ item }: { item: ProductData }) => {
   return (
     <div
       key={item?._id}
-      className="border border-px border-lightText/40 rounded-md relative group overflow-hidden"
+      // className="border border-px border-lightText/40 rounded-md relative group overflow-hidden"
+      className="shadow shadow-gray-400 rounded-md relative group overflow-hidden"
     >
       <div className="overflow-hidden">
         <Link href={`/product/${item?.slug?.current}`}>
           <Image
             src={urlFor(item?.image)?.url()}
+            // src={Img}
             alt={item?._type}
+            priority={false}
             width={500}
             height={500}
             className="w-full h-72 object-cover group-hover:scale-105 hoverEffect"
@@ -35,13 +39,12 @@ const ProductCard = ({ item }: { item: ProductData }) => {
             return (
               <MdStar
                 key={index}
-                className={`${
-                  filled
+                className={`${filled
                     ? "text-[#fa8900]"
                     : halfFilled
                       ? "text-[#f7ca00]"
                       : "text-lightText"
-                }`}
+                  }`}
               />
             );
           })}
@@ -49,9 +52,11 @@ const ProductCard = ({ item }: { item: ProductData }) => {
         <p className="uppercase text-xs font-medium text-lightOrange">
           {item?.brand}
         </p>
-        <h2 className="text-base font-semibold text-accent line-clamp-1">
-          {item?.title}
-        </h2>
+        <Link href={`/product/${item?.slug?.current}`}>
+          <h2 className="text-lg text-black font-bold text-accent line-clamp-1">
+            {item?.title}
+          </h2>
+        </Link>
         <p className="text-center text-sm line-clamp-2">{item?.description}</p>
         <div className="flex items-center gap-3 mb-5">
           <p className="text-lightText line-through">

@@ -1,3 +1,5 @@
+import { CiHome } from "react-icons/ci";
+
 export const navBarList = [
   {
     title: "Home",

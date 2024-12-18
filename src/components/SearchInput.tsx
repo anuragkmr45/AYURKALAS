@@ -12,7 +12,7 @@ const SearchInput = () => {
         <input
           type="text"
           placeholder="Search products..."
-          className="flex-1 h-full outline-none bg-transparent placeholder:text-lightText border-[1px] border-accent/30 rounded-sm pl-8 pr-28"
+          className="flex-1 h-full outline-none bg-transparent placeholder:text-lightText border-[1px] border-lightOrange hover:shadow-sm hover:shadow-lightOrange duration-300 ease-in-out rounded-lg pl-8 pr-28"
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
@@ -22,7 +22,7 @@ const SearchInput = () => {
             onClick={() => setSearch("")}
           />
         )}
-        <button className=" bg-lightOrange text-white px-3.5 py-1.5 mr-1.5 text-sm hover:bg-darkOrange hoverEffect font-medium absolute right-0">
+        <button className=" bg-lightOrange text-white px-3.5 py-1.5 mr-1.5 text-sm rounded-lg hover:bg-darkOrange hoverEffect font-medium absolute right-0">
           Search
         </button>
       </div>

@@ -23,24 +23,15 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "brand",
+      title: "Brand",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "description",
       title: "Description",
       type: "string",
-    }),
-
-    defineField({
-      name: "image",
-      title: "Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: "category",
-      title: "Category",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
       validation: (rule) => rule.required(),
     }),
 
@@ -50,6 +41,24 @@ export default defineType({
       type: "number",
       validation: (rule) => rule.required(),
     }),
+
+    defineField({
+      name: "image",
+      title: "Image",
+      type: "image",
+      validation: (rule) => rule.required(),
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: "category",
+      title: "Category",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+      // validation: (rule) => rule.required(),
+    }),
+
     defineField({
       name: "rowprice",
       title: "Row Price",
@@ -69,11 +78,6 @@ export default defineType({
     defineField({
       name: "position",
       title: "Position",
-      type: "string",
-    }),
-    defineField({
-      name: "brand",
-      title: "Brand",
       type: "string",
     }),
     defineField({
